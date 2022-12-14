@@ -1,0 +1,62 @@
+{% extends "nasassistant/layout.html" %}
+
+{% block body %}
+<header class="header flex">
+  <div class="header1 flex">
+    <div class="hero flex">
+      <div class="hero1 flex">
+        <div class="heroHistory">
+          <p class="history">Discover the secrets of NASA and its way of studying infinity.</p>
+        </div>
+        <div class="heroYear">
+          <p class="year">Login for more features</p>
+        </div>
+      </div>
+      <div class="hero2 flex">
+        <div class="heroCosmos flex">
+          <p class="cosmos">Explore the</p>
+          <p class="cosmos1">COSMOS</p>
+        </div>
+        <div class="heroButton flex">
+          <a href="{% url 'form1' %}" class="navMenuLi2">
+            <div class="buttonn flex">
+              <div type="submit" class="contactUs">
+                <a href="{% url 'form1' %}"></a>
+              </div>
+              <p class="buttonn2">Contact US</p>
+              <div class="buttonn1"></div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="hero3" style="background-image: url(static/nasassistant/img/8.png);">
+        <div class="heroGlass">
+          <div class="heroCircle">
+            <div class="heroCircleImg">
+              <img src="static/nasassistant/img/1.png" alt="" class="astr">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <video src="static/nasassistant/img/1.m4v" autoplay preload muted loop id="video1"></video>
+</header>
+<footer>
+  <div class="line1">
+    <p class="linep">By: Andrés Eduardo Genes</p>
+  </div>
+  <div class="line2">
+    <div>
+      <img src="static/nasassistant/img/harvard.png" alt="" id="line2-1">
+    </div>
+    <p class="linep">Cambridge, MA, United States</p>
+    <img src="static/nasassistant/img/harvard-engineering.png" alt="" id="line2-2">
+    <p class="linep">Harvard School of Engineering and Applied Sciences.</p>
+  </div>
+  <div class="line3">
+    <p class="linep">Professors: Brian Yu (brian@cs.harvard.edu) & David J. Malan (malan@cs.harvard.edu)</p>
+  </div>
+</footer>
+
+{% endblock %}

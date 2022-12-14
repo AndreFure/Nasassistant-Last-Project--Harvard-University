@@ -1,0 +1,35 @@
+{% extends "nasassistant/layout.html" %}
+
+{% block body %}
+
+
+
+<div class="loginForm flex" id="sizeCenter">
+    <div class="loginForm1" id="sizeColumn">
+        <h2>Register</h2>
+        {% if message %}
+        <div class="frm">{{ message }}</div>
+        {% endif %}
+        <form action="{% url 'register' %}" method="post" name="UserForm">
+            {% csrf_token %}
+            <div class="form-group">
+                <input class="form-control" autofocus type="text" name="username" placeholder="Username">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="email" name="email" placeholder="Email Address">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="password" name="password" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="password" name="confirmation" placeholder="Confirm Password">
+            </div>
+            <input id="buttonStyle" type="submit" value="Register">
+        </form>
+        <div class="flex">Already have an account? <a href="{% url 'login' %}" class="nav-link1">Log In here.</a></div>
+    </div>
+</div>
+
+
+
+{% endblock %}

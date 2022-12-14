@@ -1,0 +1,43 @@
+{% extends "nasassistant/layout.html" %}
+
+{% block body %}
+
+<main class="main1 flex">
+  <div class="circleGreen"></div>
+  <div class="marsContainer" id="marsContainer"><img src="static/nasassistant/img/mars.png" alt=""></div>
+  <div class="pictureMarsContainer flex">
+    <div class="moonContainer flex">
+      <div class="curiosityContainer1"><img src="static/nasassistant/img/curiosity.png" alt="" id="marsPicture"
+          class="im"></div>
+    </div>
+    <div class="pictureDayContainer1 flex pDc1">
+      <div class="pictureDayContainer2">
+        <h2 class="dayTitle"><span class="dayTitleSpan">LOOK AT</span> PICTURES OF MARS</h2>
+        <div id="dayP1"></div>
+        <p class="dayP" id="marsExplan">Press the button and see images of Mars obtained from the Curiosity Rover
+          mission.
+          You will get the photos and the
+          terrestrial date it was taken.</p>
+        <button class="marsButton but" onclick="count1()">Observe Mars</button>
+      </div>
+    </div>
+  </div>
+</main>
+<footer>
+  <div class="line1">
+    <p class="linep">By: Andrés Eduardo Genes</p>
+  </div>
+  <div class="line2">
+    <div>
+      <img src="static/nasassistant/img/harvard.png" alt="" id="line2-1">
+    </div>
+    <p class="linep">Cambridge, MA, United States</p>
+    <img src="static/nasassistant/img/harvard-engineering.png" alt="" id="line2-2">
+    <p class="linep">Harvard School of Engineering and Applied Sciences.</p>
+  </div>
+  <div class="line3">
+    <p class="linep">Professors: Brian Yu (brian@cs.harvard.edu) & David J. Malan (malan@cs.harvard.edu)</p>
+  </div>
+</footer>
+
+{% endblock %}

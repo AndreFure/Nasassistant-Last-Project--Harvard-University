@@ -1,0 +1,101 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Nasassistant{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="{% static 'nasassistant/css/styles.css' %}" rel="stylesheet">
+    <link href="{% static 'nasassistant/css/nav.css' %}" rel="stylesheet">
+    <link href="{% static 'nasassistant/css/header.css' %}" rel="stylesheet">
+    <link href="{% static 'nasassistant/css/viewlisting.css' %}" rel="stylesheet">
+    <link href="{% static 'nasassistant/css/footer.css' %}" rel="stylesheet">
+    <link href="{% static 'nasassistant/css/form.css' %}" rel="stylesheet">
+    <link href="{% static 'nasassistant/css/exoplanets.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'nasassistant/css/reset.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
+
+</head>
+
+<body class="flex">
+    <nav class="navbar flex" id="navbar">
+        <div class="nav1 flex " id="nav1">
+            <div class="logo flex" id="logo">
+                <div class="logo1">
+                    <a href="{% url 'index' %}"><img src="static/nasassistant/img/Logo.png" alt="logo"></a>
+                </div>
+                <div class="logo2">
+                    <h1>NasaAssistant</h1>
+                </div>
+            </div>
+            <div class="flex navMenu">
+                <ul class="flex navMenuUl hList" id="headerList">
+                    <li class="flex">
+                        <a href="{% url 'index' %}"><img src="static/nasassistant/img/home.svg" alt=""></a>
+                    </li>
+                    <li class="flex">
+                        <a href="{% url 'day' %}" class="navMenuLi2">PHOTO OF THIS DAY</a>
+                    </li>
+                    <li class="flex">
+                        <a href="{% url 'mars' %}" class="navMenuLi3">MARS PHOTOS</a>
+                    </li>
+                    <li class="flex">
+                        <a href="{% url 'form1' %}" class="navMenuLi2">CONTACT US</a>
+                    </li>
+                    {% if user.is_authenticated %}
+                    <li class="flex">
+                        <a class="navMenuLi2" href="{% url 'logout' %}">LOG OUT</a>
+                    </li>
+                    {% else %}
+                    <li class="flex">
+                        <a class="navMenuLi2" href="{% url 'login' %}">LOG IN</a>
+                    </li>
+                    {% endif %}
+                    {% if user.is_authenticated %}
+                    <li class="flex">
+                        <a class="navMenuLi2" href="{% url 'exoplanets' %}">EXOPLANETS</a>
+                    </li>
+                    {% endif %}
+                    <li class="flex">
+                        <div class="si" id="logg">
+                            {% if user.is_authenticated %}<strong>{{ user.username }}</strong>.
+                            {% else %}
+                            NOT SIGNED IN
+                            {% endif %}
+                        </div>
+                    </li>
+
+                </ul>
+
+            </div>
+            <div class="toggle" id="toggleImg">
+            </div>
+        </div>
+    </nav>
+
+    {% block body %}
+    {% endblock %}
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <script src="{% static 'nasassistant/js/main.js' %}"></script>
+    <script src="{% static 'nasassistant/js/app.js' %}"></script>
+    <script src="{% static 'nasassistant/js/form.js' %}"></script>
+    <script src="{% static 'nasassistant/js/cart.js' %}"></script>
+    <script src="{% static 'nasassistant/js/nasaExoplanets.js' %}"></script>
+    <script src="{% static 'nasassistant/js/nav.js' %}"></script>
+
+</body>
+
+</html>

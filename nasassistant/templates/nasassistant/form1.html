@@ -1,0 +1,45 @@
+{% extends "nasassistant/layout.html" %}
+
+{% block body %}
+
+<section class="sectionContact" style="background: #010101;">
+  <img src="static/nasassistant/img/101.png" data-speed="-5" class="layer layer1">
+  <img src="static/nasassistant/img/102.png" data-speed="5" class="layer layer1">
+  <img src="static/nasassistant/img/103.png" data-speed="2" class="layer">
+  <img src="static/nasassistant/img/104.png" data-speed="6" class="layer layer1">
+  <img src="static/nasassistant/img/105.png" data-speed="8" class=" layer layer1">
+  <img src="static/nasassistant/img/106.png" data-speed="-2" class="layer">
+  <img src="static/nasassistant/img/107.png" data-speed="4" class="layer">
+  <img src="static/nasassistant/img/108.png" data-speed="-9" class="layer">
+  <img src="static/nasassistant/img/109.png" data-speed="6" class="layer">
+  <img src="static/nasassistant/img/110.png" data-speed="-7" class="layer">
+  <img src="static/nasassistant/img/111.png" data-speed="-5" class="layer">
+  <img src="static/nasassistant/img/112.png" data-speed="5" class="layer">
+  <div class="formCont">
+    <form enctype="text/plain" action="mailto:andresgenes01@gmail.com" class="formCont1" method="post"
+      data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="3000">
+      {% csrf_token %}
+      <p class="contactus">CONTACT ME</p>
+      <div class="input">
+        <input type="text" placeholder="Your name" required class="inp">
+      </div>
+      <div class="email">
+        <input type="e-mail" placeholder="Your email" required class="inp">
+      </div>
+      <div class="textarea">
+        <textarea name="mensaje" id="" cols="30" rows="10" required
+          placeholder="Message. Example: Hey, I'm interested in your work..!" class="inp"></textarea>
+      </div>
+      <button class="btnmsj">SEND MENSSAGE</button>
+    </form>
+  </div>
+  <div id="cursor">
+  </div>
+</section>
+<div class="contactContainer">
+  <div class="imgAstronaut">
+    <img src="static/nasassistant/img/astronaut.png" alt="astronaut">
+  </div>
+</div>
+
+{% endblock %}
